@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Layout 3 - Bootstrap</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <style>
+        .bg{
+            background: #c0c0c0;
+        }
+        .grid{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 120px);
+            grid-gap: 30px;
+        }
+
+        .boxes{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(1, 180px);
+            grid-gap: 30px;
+        }
+
+        .boxes > article{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+</head>
+<body class="bg-light">
+
+    <div class="container">
+        
+        <div class="row">
+
+            <div class="d-flex py-2 bg justify-content-between align-items-center">
+
+                <header><h1>Logo</h1></header>
+
+                <nav class="fs-3">Navigation</nav>
+
+            </div>
+
+        </div>
+
+   
+            <section class="row grid mt-3">
+                <div class="bg"></div>
+                <div class="bg"></div>
+                <div class="bg"></div>
+                <div class="bg"></div>
+                <div class="bg"></div>
+                <div class="bg"></div>
+                <div class="bg"></div>
+                <div class="bg"></div>
+                <div class="bg"></div>
+                <div class="bg"></div>
+                <div class="bg"></div>
+                <div class="bg"></div>
+                <div class="bg"></div>
+                <div class="bg"></div>
+                <div class="bg"></div>
+                <div class="bg"></div>
+            </section>
+
+            <section class="row boxes mt-3">
+                <article class="bg fs-3">box-1</article>
+                <article class="bg fs-3">box-2</article>
+                <article class="bg fs-3">box-3</article>
+            </section>
+
+        <footer class="row bg mt-3 py-2">
+            <div class="col text-center fs-2">Footer</div>
+        </footer>
+
+    </div>
+    
+</body>
+</html>
