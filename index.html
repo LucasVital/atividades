@@ -1,110 +1,176 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atividade - Novo dia, novas coisas criativas.</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="imagens/favicon.ico">
+    <title>Atividade Javascript 19/10/2021</title>
+    <style>
+        body{
+            background: #F3F4F6;
+            font-family: sans-serif;
+        }
+        header{
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px 0;
+            color: #4B5563;
+            
+        }
+        header h1{
+            font-size: 22px;
+            line-height: 80%;
+        }
+        header h2, header h3{
+            font-size: 18px;
+            line-height: 80%;
+        }
+        .questao{
+            font-size: 14px;
+            color: #6B7280;
+            line-height: 140%;
+        }
+        input{
+            border: 1px solid #D1D5DB;
+            border-radius: 5px;
+            padding: 5px;
+            font-size: 18px;
+            color: #374151;
+        }
+        .w{
+            width: 80px;
+        }
+        input:focus{
+            outline: none;
+        }
+        .container{
+            width: 100%;
+            max-width: 500px;
+            margin: 20px auto 0;
+            background: white;
+            padding: 20px;
+            border: 1px solid #E5E7EB;
+            border-radius: 5px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        .resultado{
+            padding: 10px 0;
+            display: block;
+            color: #EF4444;
+            font-size: 14px;
+        }
+        button{
+            background-color: #059669;
+            padding: 8px 10px;
+            font-size: 14px;
+            border: 1px solid #34D399;
+            border-radius: 3px;
+            color: #ECFDF5;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        button:hover{
+            background-color: #047857;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- IFRO - Ariquemes
-    Tecnologia em Análise e Desenvolvimento de Sistemas
-    2021.2 - 1º Período
-    Programação I
-    Professor: Marcos Alves Faino
-    Aluno:Lucas Pedreira Vital -->
-
-    <header class="header">
-        <div class="header__content">
-            <h1 class="header__title">
-                Novo dia,<br>
-                Novas coisas<br>
-                criativas.
-            </h1>
-            <a class="header__link" href="#" title="Veja mais">Veja mais</a>
-        </div>
+    <header>
+        <h1>Programação I - 1P - TADS - 2021/2</h1>
+        <h2>Professor: Marcos Faino</h2>
+        <h3>Aluno: Lucas Pedreira Vital</h3>
     </header>
 
-    <!-- login -->
-    <section class="login login--bg">
-        <div class="login__content">
-            <h1 class="login__title">Nosso clube esportivo está aberto!</h1>
-            <p class="login__description">
-                Inscreva-se hoje pagando nossas taxas de processamento de US$ 39 e de 
-                iniciação de US$ 49 e obtenha o resto do ano GRÁTIS!
-            </p>
-            <button class="login__button" title="Entrar">entrar</button>
-        </section>
+<div class="container">
+
+    <div>
+        <p class="questao">1. Crie uma página web que contenha uma caixa de texto e um span. Ao ser modificado o valor (onchange) da caixa de texto, uma função que calcule o cubo deste número e mostre em um span será chamada.</p>
+        <input id="cubo" onchange="cubo()" type="number" min="0">
+        <span class="resultado" id="spanCubo"></span>
     </div>
-    <!-- /login -->
 
-    <!-- planos-precos -->
-    <section class="plans">
-        <h1 class="plans__title">Modelo de tabela de preços</h1>
-        <p class="plans__description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Culpa totam quos nemo a, itaque hic saepe mollitia obcaecati ipsam distinctio
-        </p>
 
-        <div class="plans__table--responsive">
-            <table class="plans__table">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>Básico</th>
-                        <th>Padrão</th>
-                        <th>Avançado</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="plans__price">
-                        <td class="plans__pay">PREÇO MENSAL</td>
-                        <td class="plans--bold plans__price--font-extra">$ 29</td>
-                        <td class="plans--bold plans__price--font-extra">$ 59</td>
-                        <td class="plans--bold plans__price--font-extra">$ 139</td>
-                    </tr>
-                    <tr>
-                        <td>comercial</td>
-                        <td>1 usuário completo</td>
-                        <td>5 usuário completos</td>
-                        <td>Usuários personalizados</td>
-                    </tr>
-                    <tr>
-                        <td>Usuários ilimitados somente leitura</td>
-                        <td>1.000 visualizações de email</td>
-                        <td>2.000 visualizações de email</td>
-                        <td>Visualizações de email personalizadas</td>
-                    </tr>
-                    <tr>
-                        <td>Contratos</td>
-                        <td>5 contratos por cliente</td>
-                        <td>25 contratos por cliente</td>
-                        <td>Contratos ilimitados</td>
-                    </tr>
-                    <tr>
-                        <td>Café</td>
-                        <td>5 xícaras</td>
-                        <td>8 xícaras</td>
-                        <td>10 xícaras</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section> 
-    <!-- /planos-precos -->
+</div>
 
-    <footer class="footer">
-        <div class="footer__content">
-            <blockquote class="footer__blockquote">
-                "A mente sempre se lembrará exatamente do que aconteceu. 
-                Mas o coração sempre se lembrará do sentimento."
-            </blockquote>
-            <cite class="footer__cite">Brigitte Nicole</cite>
-        </div>
-    </footer>
+<div class="container">
+
+    <div>
+        <p class="questao">2. Crie uma página web com três caixas de texto ( &lt;input type='number'&gt; ) onde serão informados os valores, em seguida crie um botão que ao ser clicado chame uma função, que receba estes três números e verifique o maior dos três números dados e mostre uma mensagem, em um parágrafo, informando o resultado para o usuário.</p>
+        <input class="w numeros" type="number" min="0">
+        <input class="w numeros" type="number" min="0">
+        <input class="w numeros" type="number" min="0">
+        <button id="btnVerificarNumeros">verificar</button>
+        <p class="resultado" id="numeroMaior"></p>
+    </div>
+
+
+</div>
+
+
+<div class="container">
+
+    <div>
+        <p class="questao">3. Crie uma página web que contenha uma caixa de texto que quando o usuário digitar alguma coisa converta o seu conteúdo para letras maiúsculas, e informe, em um span quantos caracteres foram digitados.
+            Dicas: utilizar o evento onkeyup. Para converter para maiúsculas texto.toUpperCase()</p>
+        <input onkeyup="maiuscula(this)" type="text">
+        <span id="saida" class="resultado"></span>
+    </div>
+
+
+</div>
+
+
     
+<script>
+// Questão 01
+    const inputCubo = document.getElementById('cubo');
+    const spanCubo = document.getElementById('spanCubo');
+
+    function cubo()
+    {
+        const resultado = Math.pow(inputCubo.value, 3);
+        spanCubo.innerHTML = inputCubo.value + '³ = ' + resultado;
+    }
+
+// Questão 02
+
+    const inputNumeros = document.getElementsByClassName('numeros');
+    const btnVerificarNumeros = document.getElementById('btnVerificarNumeros');
+    let array = [];
+
+    function maiorNumero(){
+        array = [];
+
+        for(x=0; x<inputNumeros.length; x++){
+            array.push(parseInt(inputNumeros[x].value))
+        }
+
+        array.sort(function(a, b){
+            return a - b;
+        })
+
+        numeroMaior.innerHTML = "O maior número é o: " + array[array.length - 1];
+
+    }
+
+    btnVerificarNumeros.addEventListener('click', maiorNumero);
+
+// Questão 03
+
+    function maiuscula(e){
+
+        let texto = e.value.toUpperCase();
+
+        if(texto.length > 0){
+            saida.innerHTML = texto + " ( total de " + texto.length + " caracteres. )";
+        }else{
+            saida.innerHTML = "";
+        }    
+    
+    }
+
+</script>
 </body>
 </html>
