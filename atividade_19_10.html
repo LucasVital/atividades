@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Javascript 19/10/2021</title>
+    <style>
+        body{
+            background: #F3F4F6;
+            font-family: sans-serif;
+        }
+        header{
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px 0;
+            color: #4B5563;
+            
+        }
+        header h1{
+            font-size: 22px;
+            line-height: 80%;
+        }
+        header h2, header h3{
+            font-size: 18px;
+            line-height: 80%;
+        }
+        .questao{
+            font-size: 14px;
+            color: #6B7280;
+            line-height: 140%;
+        }
+        input{
+            border: 1px solid #D1D5DB;
+            border-radius: 5px;
+            padding: 5px;
+            font-size: 18px;
+            color: #374151;
+        }
+        .w{
+            width: 80px;
+        }
+        input:focus{
+            outline: none;
+        }
+        .container{
+            width: 100%;
+            max-width: 500px;
+            margin: 20px auto 0;
+            background: white;
+            padding: 20px;
+            border: 1px solid #E5E7EB;
+            border-radius: 5px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        .resultado{
+            padding: 10px 0;
+            display: block;
+            color: #EF4444;
+            font-size: 14px;
+        }
+        button{
+            background-color: #059669;
+            padding: 8px 10px;
+            font-size: 14px;
+            border: 1px solid #34D399;
+            border-radius: 3px;
+            color: #ECFDF5;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        button:hover{
+            background-color: #047857;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Programação I - 1P - TADS - 2021/2</h1>
+        <h2>Professor: Marcos Faino</h2>
+        <h3>Aluno: Lucas Pedreira Vital</h3>
+    </header>
+
+<div class="container">
+
+    <div>
+        <p class="questao">1. Crie uma página web que contenha uma caixa de texto e um span. Ao ser modificado o valor (onchange) da caixa de texto, uma função que calcule o cubo deste número e mostre em um span será chamada.</p>
+        <input id="cubo" onchange="cubo()" type="number" min="0">
+        <span class="resultado" id="spanCubo"></span>
+    </div>
+
+
+</div>
+
+<div class="container">
+
+    <div>
+        <p class="questao">2. Crie uma página web com três caixas de texto ( &lt;input type='number'&gt; ) onde serão informados os valores, em seguida crie um botão que ao ser clicado chame uma função, que receba estes três números e verifique o maior dos três números dados e mostre uma mensagem, em um parágrafo, informando o resultado para o usuário.</p>
+        <input class="w numeros" type="number" min="0">
+        <input class="w numeros" type="number" min="0">
+        <input class="w numeros" type="number" min="0">
+        <button id="btnVerificarNumeros">verificar</button>
+        <p class="resultado" id="numeroMaior"></p>
+    </div>
+
+
+</div>
+
+
+<div class="container">
+
+    <div>
+        <p class="questao">3. Crie uma página web que contenha uma caixa de texto que quando o usuário digitar alguma coisa converta o seu conteúdo para letras maiúsculas, e informe, em um span quantos caracteres foram digitados.
+            Dicas: utilizar o evento onkeyup. Para converter para maiúsculas texto.toUpperCase()</p>
+        <input onkeyup="maiuscula(this)" type="text">
+        <span id="saida" class="resultado"></span>
+    </div>
+
+
+</div>
+
+
+    
+<script>
+// Questão 01
+    const inputCubo = document.getElementById('cubo');
+    const spanCubo = document.getElementById('spanCubo');
+
+    function cubo()
+    {
+        const resultado = Math.pow(inputCubo.value, 3);
+        spanCubo.innerHTML = inputCubo.value + '³ = ' + resultado;
+    }
+
+// Questão 02
+
+    const inputNumeros = document.getElementsByClassName('numeros');
+    const btnVerificarNumeros = document.getElementById('btnVerificarNumeros');
+    let array = [];
+
+    function maiorNumero(){
+        array = [];
+
+        for(x=0; x<inputNumeros.length; x++){
+            array.push(parseInt(inputNumeros[x].value))
+        }
+
+        array.sort(function(a, b){
+            return a - b;
+        })
+
+        numeroMaior.innerHTML = "O maior número é o: " + array[array.length - 1];
+
+    }
+
+    btnVerificarNumeros.addEventListener('click', maiorNumero);
+
+// Questão 03
+
+    function maiuscula(e){
+
+        let texto = e.value.toUpperCase();
+
+        if(texto.length > 0){
+            saida.innerHTML = texto + " ( total de " + texto.length + " caracteres. )";
+        }else{
+            saida.innerHTML = "";
+        }    
+    
+    }
+
+</script>
+</body>
+</html>
