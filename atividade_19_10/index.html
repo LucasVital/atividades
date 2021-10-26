@@ -164,7 +164,8 @@
         let texto = e.value.toUpperCase();
 
         if(texto.length > 0){
-            saida.innerHTML = texto + " ( total de " + texto.length + " caracteres. )";
+            e.value = texto;
+            saida.innerHTML = " Contém um total de " + texto.length + " caracteres. )";
         }else{
             saida.innerHTML = "";
         }    
